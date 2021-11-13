@@ -18,8 +18,10 @@ ws.title('PythonGuides')
 ws.config(bg='#223441')
 ws.resizable(width=False, height=False)
 
+
 frame = Frame(ws)
 frame.pack(pady=10)
+ws.bind('<Return>', newTask)
 
 lb = Listbox(
     frame,
@@ -65,16 +67,7 @@ my_entry.pack(pady=20)
 button_frame = Frame(ws)
 button_frame.pack(pady=20)
 
-addTask_btn = Button(
-    button_frame,
-    text='Add Task',
-    font=('times 14'),
-    bg='#c5f776',
-    padx=20,
-    pady=10,
-    command=newTask
-)
-addTask_btn.pack(fill=BOTH, expand=True, side=LEFT)
+
 
 delTask_btn = Button(
     button_frame,
