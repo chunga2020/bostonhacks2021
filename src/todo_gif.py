@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox
@@ -116,9 +117,9 @@ ws.bind('<BackSpace>', deleteTask)
 # Display GIF
 lbl = ImageLabel(ws)
 lbl.pack()
-lbl.load('snow_gif.gif')
-ws.mainloop()
+lbl.load('red_fish.gif')
 
 
+os.system("1.mp3")
 
 ws.mainloop()
