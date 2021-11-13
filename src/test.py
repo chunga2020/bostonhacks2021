@@ -9,7 +9,7 @@ def newTask(event=None):
     else:
         messagebox.showwarning("warning", "Please enter some task.")
 
-def deleteTask():
+def deleteTask(event=None):
     lb.delete(ANCHOR)
     
 ws = Tk()
@@ -69,16 +69,8 @@ button_frame.pack(pady=20)
 
 
 
-delTask_btn = Button(
-    button_frame,
-    text='Delete Task',
-    font=('times 14'),
-    bg='#ff8b61',
-    padx=20,
-    pady=10,
-    command=deleteTask
-)
-delTask_btn.pack(fill=BOTH, expand=True, side=LEFT)
+ws.bind('<Delete>', deleteTask)
+ws.bind('<BackSpace>', deleteTask)
 
 
 ws.mainloop()
