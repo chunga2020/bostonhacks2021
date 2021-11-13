@@ -1,6 +1,38 @@
 from tkinter import *
 from tkinter import messagebox
 
+class TodoItem():
+    """ A todo item """
+
+    def __init__(self, text: str) -> None:
+        """
+        Create a todo
+
+        Args:
+            text (str): The text description of the task
+        """
+        self.text = text
+        self.complete: bool = False # when added, an item is not done
+
+    def get_text(self) -> str:
+        """
+        Get the item text
+
+        Returns:
+            str: the item's text
+        """
+        return self.text
+
+    def toggle_complete(self) -> None:
+        """
+        Toggle a todo item between complete and incomplete
+        """
+        if self.complete:
+            self.complete = False
+        else:
+            self.complete = True
+
+
 def newTask(event=None):
     task = my_entry.get()
     if task != "":
