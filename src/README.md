@@ -7,3 +7,4 @@ calming background music
 
 ## Features
 - Task labels
+- Conversion of entered plain text to tasks
