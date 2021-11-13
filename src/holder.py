@@ -35,8 +35,21 @@ lb = Listbox(
     activestyle="none",
 
 )
+lb.pack(side=LEFT, fill=BOTH)
 
-lb.pack(side=LEFT, fill=NONE)
+lb_ = Listbox(
+    frame,
+    width=25,
+    height=8,
+    font=('Times', 18),
+    bd=0,
+    fg='#464646',
+    highlightthickness=0,
+    selectbackground='#a6a6a6',
+    activestyle="none",
+    
+)
+lb.pack(side=LEFT, fill=BOTH)
 
 task_list = [
     'Eat apple',
@@ -49,13 +62,11 @@ task_list = [
     'paint canvas'
     ]
 
-
-
 for item in task_list:
     lb.insert(END, item)
 
 sb = Scrollbar(frame)
-sb.pack(side=RIGHT, fill=Y)
+sb.pack(side=RIGHT, fill=BOTH)
 
 lb.config(yscrollcommand=sb.set)
 sb.config(command=lb.yview)
