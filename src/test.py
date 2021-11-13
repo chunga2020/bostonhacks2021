@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 
-def newTask():
+def newTask(event=None):
     task = my_entry.get()
     if task != "":
         lb.insert(END, task)
