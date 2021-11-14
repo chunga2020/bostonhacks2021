@@ -61,15 +61,13 @@ def rotateAnimation(lst_of_gifs):
     global list_of_gifs
     global lbl
     # Display GIF
-    
-    print(gif_number)
     lbl.config(image='')
     lbl.load(str(gif_number) + 'yay.gif')
     gif_number = (gif_number + 1)%len(lst_of_gifs)
 
 
 gif_number = 0
-list_of_gifs = ['0yay.gif', '1yay.gif', '2yay.gif', '3yay.gif', '4yay.gif', '5yay.gif', '6yay.gif']
+list_of_gifs = ['0yay.gif', '1yay.gif', '2yay.gif', '3yay.gif', '4yay.gif', '5yay.gif', '6yay.gif', '7yay.gif']
     
 ws = Tk()
 ws.geometry('1000x750')
