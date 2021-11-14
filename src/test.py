@@ -46,6 +46,7 @@ def deleteTask(event=None):
     
 ws = Tk()
 ws.geometry('500x450+500+200')
+ws.iconbitmap('assets\CWIcon.ico')
 ws.title('Chillwork')
 ws.config(bg='#223441')
 ws.resizable(width=False, height=False)
@@ -65,9 +66,10 @@ lb = Listbox(
     highlightthickness=0,
     selectbackground='#a6a6a6',
     activestyle="none",
-    
+
 )
-lb.pack(side=LEFT, fill=BOTH)
+
+lb.pack(side=LEFT, fill=NONE)
 
 task_list = [
     'Eat apple',
@@ -80,11 +82,13 @@ task_list = [
     'paint canvas'
     ]
 
+
+
 for item in task_list:
     lb.insert(END, item)
 
 sb = Scrollbar(frame)
-sb.pack(side=RIGHT, fill=BOTH)
+sb.pack(side=RIGHT, fill=Y)
 
 lb.config(yscrollcommand=sb.set)
 sb.config(command=lb.yview)
