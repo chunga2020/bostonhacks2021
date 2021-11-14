@@ -2,9 +2,8 @@ import os
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox
-from PIL import Image, ImageTk, ImageSequence
+from PIL import Image, ImageTk
 from itertools import count, cycle
-import time
 
 class ImageLabel(tk.Label):
     """
