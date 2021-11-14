@@ -1,4 +1,5 @@
 import os
+import sys
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox
@@ -134,6 +135,9 @@ ws.bind('<Control-Delete>', deleteTask)
 ws.bind('<Control-BackSpace>', deleteTask)
 
 
-os.system("1.mp3")
+if sys.platform == "win32":
+    os.system("1.mp3") # somehow this just works on Windows --- super sus
+else:
+    os.system("xdg-open 1.mp3 &")
 
 ws.mainloop()
