@@ -7,5 +7,4 @@
 
 ## Notes
 
-To work correctly, `app.py` must be invoked from the top-level directory (this
-directory; bostonhacks2021)
+To work correctly, `app.py` must be invoked from the `src` directory
