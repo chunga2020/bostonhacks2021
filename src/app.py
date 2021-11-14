@@ -131,8 +131,8 @@ my_entry.pack(pady=5)
 
 
 
-ws.bind('<Delete>', deleteTask)
-ws.bind('<BackSpace>', deleteTask)
+ws.bind('<Control-Delete>', deleteTask)
+ws.bind('<Control-BackSpace>', deleteTask)
 
 
 os.system("1.mp3")
