@@ -2,8 +2,9 @@ import os
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageSequence
 from itertools import count, cycle
+import time
 
 class ImageLabel(tk.Label):
     """
@@ -53,12 +54,31 @@ def newTask(event=None):
 
 def deleteTask(event=None):
     lb.delete(ANCHOR)
+    rotateAnimation(list_of_gifs)
+
+def rotateAnimation(lst_of_gifs):
+    global gif_number
+    global list_of_gifs
+    global lbl
+    # Display GIF
+    
+    print(gif_number)
+    lbl.config(image='')
+    lbl.load(str(gif_number) + 'yay.gif')
+    gif_number = (gif_number + 1)%len(lst_of_gifs)
+
+
+gif_number = 0
+list_of_gifs = ['0yay.gif', '1yay.gif', '2yay.gif', '3yay.gif', '4yay.gif', '5yay.gif', '6yay.gif']
     
 ws = Tk()
 ws.geometry('1000x750')
 ws.title('PythonGuides')
 ws.config(bg='#000000')
 ws.resizable(width=False, height=False)
+
+lbl = ImageLabel(ws)
+lbl.pack()
 
 
 frame = Frame(ws)
@@ -113,11 +133,6 @@ my_entry.pack(pady=5)
 
 ws.bind('<Delete>', deleteTask)
 ws.bind('<BackSpace>', deleteTask)
-
-# Display GIF
-lbl = ImageLabel(ws)
-lbl.pack()
-lbl.load('red_fish.gif')
 
 
 os.system("1.mp3")
