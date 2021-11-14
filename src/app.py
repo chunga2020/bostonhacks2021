@@ -47,6 +47,18 @@ class ImageLabel(tk.Label):
 def newTask(event=None):
     task = my_entry.get()
     if task != "":
+        # update task list file with entry
+        with open("taskList.txt", "a") as writer:
+            task_list.append(task)
+
+            new_file = ""
+            for i in range(len(task_list)):
+                new_file += str(task_list[i])
+                if (i < len(task_list) - 1):
+                    new_file += "~"
+
+            # write list to txt
+            writer.write(new_file)
         lb.insert(END, task)
         my_entry.delete(0, "end")
     else:
@@ -80,6 +92,10 @@ ws.resizable(width=False, height=False)
 lbl = ImageLabel(ws)
 lbl.pack()
 
+if os.path.exists("taskList.txt"):
+    with open("taskList.txt", "r") as reader:
+        contents = reader.read()
+        task_list = contents.split("~")
 
 frame = Frame(ws)
 frame.pack(pady=10)
@@ -99,17 +115,6 @@ lb = Listbox(
 )
 
 lb.pack(side=LEFT, fill=NONE)
-
-task_list = [
-    'Eat apple',
-    'drink water',
-    'go gym',
-    'write software',
-    'write documentation',
-    'take a nap',
-    'Learn something',
-    'paint canvas'
-    ]
 
 
 
